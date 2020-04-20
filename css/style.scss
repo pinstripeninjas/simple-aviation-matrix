@@ -1,0 +1,84 @@
+// Global color scheme
+$primary-blue: #0a4595;
+$dark-gray: #333;
+$light-gray: #ddd;
+$green: green;
+$yellow: yellow;
+$red: red;
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "Quicksand", sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+nav {
+	display: flex;
+	background: $primary-blue;
+	color: #fff;
+	height: 50px;
+	line-height: 50px;
+	justify-content: space-between;
+	padding: 0 15px;
+	div {
+		display: flex;
+		align-items: center;
+		h3 {
+			margin: 0 2px;
+			font-weight: 400;
+			font-size: 1.7rem;
+		}
+		img {
+			margin: 0 2px;
+			width: 30px;
+			height: 30px;
+		}
+	}
+
+	ul {
+		display: flex;
+		li {
+			list-style-type: none;
+			padding: 0 15px;
+			transition: all 0.5s;
+			&:hover {
+				background-color: darken($primary-blue, 10%);
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+.container {
+	width: 85%;
+	margin: 0 auto;
+}
+
+.matrix-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.matrix-field {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#loader {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	width: 100vw;
+	color: red;
+	font-size: 3rem;
+}
