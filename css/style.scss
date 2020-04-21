@@ -60,19 +60,11 @@ nav {
 	margin: 0 auto;
 }
 
-.matrix-header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+.display-none {
+	display: none;
 }
 
-.matrix-field {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
-
-#loader {
+.loader {
 	position: relative;
 	display: flex;
 	align-items: center;
@@ -81,4 +73,44 @@ nav {
 	width: 100vw;
 	color: red;
 	font-size: 3rem;
+}
+
+.matrix-header {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.header-item {
+	// width: 50px;
+	width: 7%;
+	text-align: center;
+	padding: 10px 0;
+}
+
+.criteria-item {
+	// width: 120px;
+	width: 13%;
+	text-align: center;
+	padding: 10px 0;
+}
+
+.matrix-row {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.field-name {
+	// width: 200px;
+	width: 22%;
+	font-weight: 700;
+}
+
+.forecast-item {
+	// width: 50px;
+	width: 7%;
+	text-align: center;
+	padding: 10px 0;
+	background: #ccc;
 }
