@@ -1,8 +1,9 @@
 // API requests
-const urlForecast = "https://extendsclass.com/api/json-storage/bin/cfbaeae";
-const urlCriteria = "https://extendsclass.com/api/json-storage/bin/cbdbfad";
+const urlForecast = "https://api.jsonbin.io/b/5e9f87fe5fa47104cea4bb07";
+const urlCriteria = "https://api.jsonbin.io/b/5e9faab7435f5604bb45c4b1";
 
 // Document Selectors
+const matrix = document.querySelector(".matrix");
 const matrixHeader = document.querySelector(".matrix-header");
 const matrixContent = document.querySelector(".matrix-content");
 const loader = document.querySelector(".loader");
@@ -25,8 +26,10 @@ function getDataForMatrix() {
 				buildHeader(forecast, criteria);
 				// create matrix contnent
 				buildMatrixContent(forecast, criteria);
+				// remove loader and display matrix
 				loader.classList.toggle("display-none");
 				loader.classList.toggle("loader");
+				matrix.classList.toggle("display-none");
 			})
 		)
 		.catch((err) => {

@@ -24,7 +24,7 @@
 			"noWx": "Below 5500'",
 			"modWx": "5500' to 8000'",
 			"majWx": "Above 8000'",
-			"textArray": ["Below 5000'", "5000' to 8000'", "Above 8000'"],
+			"textArray": ["Below 5500'", "5500' to 8000'", "Above 8000'"],
 			"colorsClass": ["green", "yellow", "red"]
 		},
 		{
