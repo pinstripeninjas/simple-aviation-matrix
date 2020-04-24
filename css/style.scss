@@ -8,6 +8,7 @@ $red: #f25c05;
 
 // other variables
 $box-shadow: 10px 10px 25px 5px rgba(0, 0, 0, 0.4);
+$large-screen-break: 1550px;
 
 // mixins
 @mixin flexCenter {
@@ -204,10 +205,10 @@ section {
 }
 
 // @media query //////////////////////////////
-@media screen and (min-width: 1500px) {
+@media (min-width: $large-screen-break) {
 	.chart {
 		width: 70%;
-		height: 70%;
+		height: 80%;
 	}
 	.matrix {
 		width: 70%;
