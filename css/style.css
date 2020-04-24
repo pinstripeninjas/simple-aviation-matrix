@@ -6,6 +6,10 @@
   font-family: "Quicksand", sans-serif;
 }
 
+body {
+  background-color: #eee;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -66,11 +70,11 @@ nav ul li:hover {
 
 section {
   background-color: #eee;
-  height: calc(100vh - 50px);
+  height: calc(100vh - 90px);
 }
 
 .center {
-  position: relative;
+  position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -81,6 +85,7 @@ section {
   display: block;
   width: 85%;
   padding: 20px;
+  margin: 40px auto 0 auto;
   -webkit-box-shadow: 10px 10px 25px 5px rgba(0, 0, 0, 0.4);
           box-shadow: 10px 10px 25px 5px rgba(0, 0, 0, 0.4);
   background-color: #fff;
@@ -226,5 +231,15 @@ section {
   border-bottom: 1px solid #fff;
   border-right: 1px solid #fff;
   color: #fff;
+}
+
+.chart {
+  height: 85%;
+  width: 85%;
+  padding: 20px;
+  margin: 40px auto;
+  background-color: #fff;
+  -webkit-box-shadow: 10px 10px 25px 5px rgba(0, 0, 0, 0.4);
+          box-shadow: 10px 10px 25px 5px rgba(0, 0, 0, 0.4);
 }
 /*# sourceMappingURL=style.css.map */

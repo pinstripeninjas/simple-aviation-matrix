@@ -28,6 +28,10 @@ $box-shadow: 10px 10px 25px 5px rgba(0, 0, 0, 0.4);
 	font-family: "Quicksand", sans-serif;
 }
 
+body {
+	background-color: $light-gray;
+}
+
 a {
 	text-decoration: none;
 	color: inherit;
@@ -72,11 +76,11 @@ nav {
 
 section {
 	background-color: $light-gray;
-	height: calc(100vh - 50px);
+	height: calc(100vh - 90px);
 }
 
 .center {
-	position: relative;
+	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
@@ -86,6 +90,7 @@ section {
 	display: block;
 	width: 85%;
 	padding: 20px;
+	margin: 40px auto 0 auto;
 	box-shadow: $box-shadow;
 	background-color: #fff;
 }
@@ -186,4 +191,25 @@ section {
 	background-color: $red;
 	@include matrixBorder();
 	color: #fff;
+}
+
+// Chart JS //////////////////////////////
+.chart {
+	height: 85%;
+	width: 85%;
+	padding: 20px;
+	margin: 40px auto;
+	background-color: #fff;
+	box-shadow: $box-shadow;
+}
+
+// @media query //////////////////////////////
+@media screen and (min-width: 1500px) {
+	.chart {
+		width: 70%;
+		height: 70%;
+	}
+	.matrix {
+		width: 70%;
+	}
 }
