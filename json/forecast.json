@@ -12,6 +12,8 @@
 			"dataType": "textbox",
 			"variable": "maxT",
 			"fullName": "Max Temperature",
+			"displayGreen": true,
+			"exactValue": true,
 			"values": [101, 98, 88, 90, 91, 93, 90],
 			"category": []
 		},
@@ -19,6 +21,8 @@
 			"dataType": "textbox",
 			"variable": "densityAlt",
 			"fullName": "Density Altitiude",
+			"displayGreen": true,
+			"exactValue": true,
 			"values": [5700, 5300, 4600, 4800, 4900, 5000, 4600],
 			"category": []
 		},
@@ -26,6 +30,8 @@
 			"dataType": "textbox",
 			"variable": "maxSfcWind",
 			"fullName": "Max Surface Wind",
+			"displayGreen": true,
+			"exactValue": true,
 			"values": ["NW 8", "W 12", "SW 18", "NW 10", "NW 8", "W 8", "W 5"],
 			"category": []
 		},
@@ -33,6 +39,8 @@
 			"dataType": "textbox",
 			"variable": "maxGustSpread",
 			"fullName": "Max Gust Spread",
+			"displayGreen": true,
+			"exactValue": true,
 			"values": [3, 5, 7, 4, 3, 3, 2],
 			"category": []
 		},
@@ -40,6 +48,8 @@
 			"dataType": "textbox",
 			"variable": "TSRA",
 			"fullName": "Thunderstorms",
+			"displayGreen": false,
+			"exactValue": false,
 			"values": [0, 10, 60, 0, 0, 0, 0],
 			"category": []
 		},
@@ -47,27 +57,17 @@
 			"dataType": "textbox",
 			"variable": "maxRH",
 			"fullName": "Max Relative Humidty",
+			"displayGreen": false,
+			"exactValue": true,
 			"values": [20, 60, 85, 70, 50, 30, 25],
-			"category": []
-		},
-		{
-			"dataType": "textbox",
-			"variable": "wind10k",
-			"fullName": "Winds 10k ft AGL",
-			"values": [20, 30, 35, 20, 15, 20, 15],
-			"category": []
-		},
-		{
-			"dataType": "textbox",
-			"variable": "totalCloud",
-			"fullName": "Total Cloud Cover",
-			"values": [20, 30, 90, 50, 10, 20, 10],
 			"category": []
 		},
 		{
 			"dataType": "dropdown",
 			"variable": "visibility",
 			"fullName": "Visibility",
+			"displayGreen": false,
+			"exactValue": false,
 			"values": ["> 3", "> 3", "2-3", "> 3", "> 3", "> 3", "> 3"],
 			"category": [0, 0, 1, 0, 0, 0, 0]
 		},
@@ -75,13 +75,35 @@
 			"dataType": "dropdown",
 			"variable": "wind5k",
 			"fullName": "Winds 5k ft AGL",
+			"displayGreen": false,
+			"exactValue": false,
 			"values": ["< 20", "< 20", "20-30", "< 20", "< 20", "< 20", "< 20"],
 			"category": [0, 0, 1, 0, 0, 0, 0]
+		},
+		{
+			"dataType": "textbox",
+			"variable": "wind10k",
+			"fullName": "Winds 10k ft AGL",
+			"displayGreen": false,
+			"exactValue": false,
+			"values": [20, 30, 35, 20, 15, 20, 15],
+			"category": []
+		},
+		{
+			"dataType": "textbox",
+			"variable": "totalCloud",
+			"fullName": "Total Cloud Cover",
+			"displayGreen": false,
+			"exactValue": false,
+			"values": [20, 30, 90, 50, 10, 20, 10],
+			"category": []
 		},
 		{
 			"dataType": "dropdown",
 			"variable": "lowestFltCat",
 			"fullName": "Lowest Flight Category",
+			"displayGreen": false,
+			"exactValue": false,
 			"values": ["VFR", "VFR", "MVRF", "VFR", "VFR", "VFR", "VFR"],
 			"category": [0, 0, 1, 0, 0, 0, 0]
 		},
@@ -89,6 +111,8 @@
 			"dataType": "dropdown",
 			"variable": "mtnObs",
 			"fullName": "Mountain Obscuration",
+			"displayGreen": false,
+			"exactValue": false,
 			"values": ["None", "None", "Psbl", "None", "None", "None", "None"],
 			"category": [0, 0, 1, 0, 0, 0, 0]
 		}

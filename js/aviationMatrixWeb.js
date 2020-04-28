@@ -1,12 +1,15 @@
 // API requests
-const urlForecast = "https://api.jsonbin.io/b/5e9f87fe5fa47104cea4bb07";
-const urlCriteria = "https://api.jsonbin.io/b/5e9faab7435f5604bb45c4b1";
+const urlForecast = "https://api.jsonbin.io/b/5ea86eb34c87c3359a634594";
+const urlCriteria = "https://api.jsonbin.io/b/5ea872ac4c87c3359a634763";
 
 // Document Selectors
 const matrix = document.querySelector(".matrix");
 const matrixHeader = document.querySelector(".matrix-header");
 const matrixContent = document.querySelector(".matrix-content");
 const loader = document.querySelector(".loader");
+
+// Run everything
+getDataForMatrix();
 
 function getDataForMatrix() {
 	axios
@@ -55,7 +58,7 @@ function buildHeader(forecast, criteria) {
 	// map through array to fill criteria header
 	criteria.header.map((field) => {
 		const firstDiv = document.createElement("div");
-		firstDiv.classList.add("criteria-item");
+		firstDiv.classList.add("criteria-header-item");
 		firstDiv.innerHTML = field.text;
 		return matrixHeader.append(firstDiv);
 	});
@@ -73,9 +76,21 @@ function buildMatrixContent(forecast, criteria) {
 		field.values.map((value, j) => {
 			const valueDiv = document.createElement("div");
 			valueDiv.classList.add("forecast-item", applyColor(value, field, criteria.body[i], j));
+			// check if need to include value based on displayGreen true/false
+			if (valueDiv.classList.contains("green") && !field.displayGreen) {
+				return finalDiv.append(valueDiv);
+			}
+			// check if don't need exact value and use logic to display category
+			if (!field.exactValue) {
+				if (valueDiv.classList.contains("yellow")) {
+					valueDiv.innerText = criteria.body[i].textShort[1];
+					return finalDiv.append(valueDiv);
+				} else {
+					valueDiv.innerText = criteria.body[i].textShort[2];
+					return finalDiv.append(valueDiv);
+				}
+			}
 			valueDiv.innerText = value;
-			// check value with criteria and apply color class
-
 			return finalDiv.append(valueDiv);
 		});
 		// map through criteria values and add to matrix
@@ -114,5 +129,3 @@ function applyColor(value, field, criteria, j) {
 		}
 	}
 }
-
-getDataForMatrix();

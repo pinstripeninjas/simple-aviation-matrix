@@ -159,6 +159,12 @@ section {
   padding: 10px 0;
 }
 
+.criteria-header-item {
+  width: 13%;
+  height: 40px;
+  text-align: center;
+}
+
 .matrix-row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -197,8 +203,9 @@ section {
 
 .criteria-item {
   width: 13%;
+  height: 42px;
+  line-height: 42px;
   text-align: center;
-  padding: 10px 0;
 }
 
 .field-name {
@@ -210,8 +217,9 @@ section {
 
 .forecast-item {
   width: 7%;
+  height: 42px;
+  line-height: 42px;
   text-align: center;
-  padding: 10px 0;
 }
 
 .green {
@@ -252,4 +260,4 @@ section {
     width: 70%;
   }
 }
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=aviation-web.css.map */

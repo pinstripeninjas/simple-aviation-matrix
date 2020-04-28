@@ -1,6 +1,7 @@
 // Global color scheme
 $primary-blue: #0a4595;
 $dark-gray: #333;
+$secondary-blue: #0099d8;
 $light-gray: #eee;
 $green: rgba(97, 175, 95, 0.4);
 $yellow: rgb(255, 240, 80);
@@ -141,6 +142,12 @@ section {
 	padding: 10px 0;
 }
 
+.criteria-header-item {
+	width: 13%;
+	height: 40px;
+	text-align: center;
+}
+
 .matrix-row {
 	@include flexCenter();
 	div:nth-child(8) {
@@ -160,8 +167,9 @@ section {
 
 .criteria-item {
 	width: 13%;
+	height: 42px;
+	line-height: 42px;
 	text-align: center;
-	padding: 10px 0;
 }
 
 .field-name {
@@ -173,8 +181,9 @@ section {
 
 .forecast-item {
 	width: 7%;
+	height: 42px;
+	line-height: 42px;
 	text-align: center;
-	padding: 10px 0;
 }
 
 // color classes for matrix //////////////////////////////
