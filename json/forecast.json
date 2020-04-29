@@ -68,6 +68,23 @@
 			"fullName": "Visibility",
 			"displayGreen": false,
 			"exactValue": false,
+			"options": [
+				{
+					"color": "green",
+					"value": "> 3",
+					"text": "> 3"
+				},
+				{
+					"color": "yellow",
+					"value": "2-3",
+					"text": "2-3"
+				},
+				{
+					"color": "red",
+					"value": "< 2",
+					"text": "< 2"
+				}
+			],
 			"values": ["> 3", "> 3", "2-3", "> 3", "> 3", "> 3", "> 3"],
 			"category": [0, 0, 1, 0, 0, 0, 0]
 		},
@@ -77,6 +94,23 @@
 			"fullName": "Winds 5k ft AGL",
 			"displayGreen": false,
 			"exactValue": false,
+			"options": [
+				{
+					"color": "green",
+					"value": "< 20",
+					"text": "< 20"
+				},
+				{
+					"color": "yellow",
+					"value": "20-30",
+					"text": "20-30"
+				},
+				{
+					"color": "red",
+					"value": "> 30",
+					"text": "> 30"
+				}
+			],
 			"values": ["< 20", "< 20", "20-30", "< 20", "< 20", "< 20", "< 20"],
 			"category": [0, 0, 1, 0, 0, 0, 0]
 		},
@@ -104,6 +138,23 @@
 			"fullName": "Lowest Flight Category",
 			"displayGreen": false,
 			"exactValue": false,
+			"options": [
+				{
+					"color": "green",
+					"value": "VFR",
+					"text": "VFR"
+				},
+				{
+					"color": "yellow",
+					"value": "MVFR",
+					"text": "MVFR"
+				},
+				{
+					"color": "red",
+					"value": "IFR",
+					"text": "IFR"
+				}
+			],
 			"values": ["VFR", "VFR", "MVRF", "VFR", "VFR", "VFR", "VFR"],
 			"category": [0, 0, 1, 0, 0, 0, 0]
 		},
@@ -113,6 +164,23 @@
 			"fullName": "Mountain Obscuration",
 			"displayGreen": false,
 			"exactValue": false,
+			"options": [
+				{
+					"color": "green",
+					"value": "none",
+					"text": "None"
+				},
+				{
+					"color": "yellow",
+					"value": "psbl",
+					"text": "Psbl"
+				},
+				{
+					"color": "red",
+					"value": "likely",
+					"text": "Likely"
+				}
+			],
 			"values": ["None", "None", "Psbl", "None", "None", "None", "None"],
 			"category": [0, 0, 1, 0, 0, 0, 0]
 		}
