@@ -1,15 +1,18 @@
 // Global color scheme
 $primary-blue: #0a4595;
 $dark-gray: #333;
-$secondary-blue: #0099d8;
+$med-gray: #bbb;
 $light-gray: #eee;
+$secondary-blue: #0099d8;
 $green: rgba(97, 175, 95, 0.4);
 $yellow: rgb(255, 240, 80);
 $red: #f25c05;
 
 // other variables
 $box-shadow: 10px 10px 25px 5px rgba(0, 0, 0, 0.4);
-$large-screen-break: 1550px;
+$xl-screen-break: 1550px;
+$l-screen-break: 1300px;
+$md-screen-break: 1050px;
 
 // mixins
 @mixin flexCenter {
@@ -59,6 +62,7 @@ nav {
 			font-size: 1.7rem;
 		}
 		img {
+			display: block;
 			margin: 0 2px;
 			width: 30px;
 			height: 30px;
@@ -222,12 +226,40 @@ section {
 }
 
 // @media query //////////////////////////////
-@media (min-width: $large-screen-break) {
+@media (min-width: $xl-screen-break) {
 	.chart {
 		width: 70%;
 		height: 80%;
 	}
 	.matrix {
 		width: 70%;
+	}
+}
+
+@media (max-width: $l-screen-break) {
+	.matrix {
+		width: 100%;
+	}
+	.chart {
+		width: 100%;
+		height: 80%;
+	}
+}
+
+@media (max-width: $md-screen-break) {
+	body {
+		font-size: percentage($number: 0.8);
+	}
+	.matrix {
+		padding: 0;
+	}
+	nav #title-logo {
+		h3 {
+			font-size: 1.2rem;
+		}
+		img {
+			width: 23px;
+			height: 23px;
+		}
 	}
 }
