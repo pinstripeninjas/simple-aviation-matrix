@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<!-- Local Stylesheet -->
+		<!-- Local stylesheet -->
 		<link rel="stylesheet" href="./static/css/aviation-web.css" />
 		<!-- Google Font -->
 		<link
@@ -12,11 +12,7 @@
 		/>
 		<!-- Font Awesome CDN -->
 		<script src="https://kit.fontawesome.com/3fb8c73f01.js" crossorigin="anonymous"></script>
-		<!-- Axios CDN -->
-		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-		<!-- Chart JS -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-		<title>Density Altitude Climatology</title>
+		<title>Radar and Obs</title>
 	</head>
 	<body>
 		<!-- Navbar -->
@@ -34,18 +30,15 @@
 					<!-- ...may need href to be updated -->
 					<a href="/matrix/?aviation"><li>Forecast Matrix</li></a>
 					<a href="/matrix/?mobile"><li>Mobile Matrix</li></a>
-					<a href=""><li>Radar & Obs</li></a>
+					<a href="/matrix/?climo"><li>Climatology</li></a>
 					<a href="/accounts/logout"><li>Logout</li></a>
 				</ul>
 			</div>
 		</nav>
-		<section>
-			<div class="loader center"><i class="fas fa-sun rotate"></i>Loading...</div>
-			<div class="chart display-none">
-				<canvas id="climatologyChart" width="100%"></canvas>
-			</div>
-		</section>
-
-		<script src="./static/js/climatologyWeb.js"></script>
+		<iframe
+			src="http://www.wrh.noaa.gov/map/?&zoom=8&scroll_zoom=false&center=32.604675440554985,-110.85205078125&boundaries=false,false,false,false,false,false,false,false,false&tab=layers&hazard=true&hazard_type=all&hazard_opacity=60&obs=true&obs_type=weather&elements=temp,wind,rh,gust&temp_filter=-80,130&gust_filter=0,150&rh_filter=0,100&elev_filter=-300,14000&precip_filter=0.01,18&obs_popup=false&obs_density=60&obs_provider=ALL&radar=true&radar_min=60&radar_loop=true&radar_opacity=70"
+			frameborder="0"
+			class="center"
+		></iframe>
 	</body>
 </html>
