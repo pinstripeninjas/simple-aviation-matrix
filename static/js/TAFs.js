@@ -75,11 +75,11 @@ async function getDiscussion() {
 	const data = await res.json();
 	const res2 = await fetch(data["@graph"][0]["@id"]);
 	const data2 = await res2.json();
+	const discArray = data2.productText.split("&&");
+	const discStr = discArray[2].toString().replace(/\n/g, "");
 	const header = document.createElement("h2");
 	const body = document.createElement("p");
 	header.innerText = "Aviation Discussion";
-	body.innerText = data2.productText;
+	body.innerHTML = discStr.substring(0, 33) + "<br>" + discStr.substring(33);
 	discussion.append(header, body);
 }
-
-getDiscussion();
