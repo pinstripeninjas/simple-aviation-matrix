@@ -66,24 +66,3 @@ function adjustAlignment(rawTAF) {
 function hideLoader() {
 	loader.classList.add("display-none");
 }
-
-// function test(TAF) {
-// 	const splitArray = rawTAF.split(" ");
-// 	const finalArray = [];
-// 	let sliceIndex = 0;
-// 	// loop through array and check if contains changeGroup keywords
-// 	for (let i = 0; i < splitArray.length; i++) {
-// 		// loop through changeGroup to see if this index includes a keyword
-// 		for (let change of changeGroup) {
-// 			const check = splitArray[i].includes(change);
-// 			if (check) {
-// 				const tempArray = splitArray.slice(sliceIndex, i);
-// 				finalArray.push(tempArray);
-// 				sliceIndex = i;
-// 			}
-// 		}
-// 	}
-// 	// Since no more changeGroup, must add final TAF line
-// 	finalArray.push(splitArray.slice(sliceIndex, splitArray.length));
-// 	return finalArray;
-// }
