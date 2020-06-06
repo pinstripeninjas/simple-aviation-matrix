@@ -1,9 +1,20 @@
 // JSON API location
 const urlKTUS = "https://api.jsonbin.io/b/5ea1fc202940c704e1dd7991";
+const urlKFHU = "https://extendsclass.com/api/json-storage/bin/cedffee";
 
 const climatologyChart = document.getElementById("climatologyChart");
 const chartDiv = document.querySelector(".chart");
 const loader = document.querySelector(".loader");
+const btnList = [
+	{
+		site: "KTUS",
+		url: urlKTUS,
+	},
+	{
+		site: "KFHU",
+		url: urlKFHU,
+	},
+];
 
 const colors = ["#E81D11", "#FF931F", "#333", "#6EAF3D"];
 let labels = [];
@@ -12,7 +23,7 @@ let datasetByLabel = {};
 
 function getData() {
 	axios
-		.get(urlKTUS)
+		.get(urlKFHU)
 		.then(({ data: climatology }) => {
 			labels = climatology.labels;
 			datasetLabels = climatology.datasetLabels;
