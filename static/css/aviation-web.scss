@@ -9,7 +9,7 @@ $yellow: rgb(255, 240, 80);
 $red: #f25c05;
 
 // other variables
-$box-shadow: 10px 10px 25px 5px rgba(0, 0, 0, 0.4);
+$box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.25);
 $xl-screen-break: 1550px;
 $l-screen-break: 1300px;
 $md-screen-break: 1050px;
@@ -30,10 +30,10 @@ $md-screen-break: 1050px;
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	font-family: "Quicksand", sans-serif;
 }
 
 body {
+	font-family: "Quicksand", sans-serif;
 	background-color: $light-gray;
 }
 
@@ -162,6 +162,7 @@ section {
 }
 
 .matrix-row {
+	height: 45px;
 	@include flexCenter();
 	div:nth-child(8) {
 		margin-right: 2%;
@@ -180,23 +181,23 @@ section {
 
 .criteria-item {
 	width: 13%;
-	height: 42px;
-	line-height: 42px;
-	text-align: center;
+	height: 100%;
+	@include flexCenter();
 }
 
 .field-name {
-	width: 20%;
 	font-weight: 700;
-	padding: 10px 0;
+	width: 20%;
+	height: 100%;
+	display: flex;
+	align-items: center;
 	border-bottom: 1px solid $light-gray;
 }
 
 .forecast-item {
 	width: 7%;
-	height: 42px;
-	line-height: 42px;
-	text-align: center;
+	height: 100%;
+	@include flexCenter();
 }
 
 // color classes for matrix //////////////////////////////
@@ -234,6 +235,37 @@ iframe {
 	width: 100%;
 	height: 100%;
 	z-index: -1;
+}
+
+// TAFs Page ////////////////////////////////
+.indent {
+	margin-left: 25px;
+}
+
+#TAFs {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	margin: 20px;
+}
+
+.cardTAF {
+	font-family: "Cutive Mono", monospace;
+	margin: 20px;
+	padding: 20px;
+	border: 1px solid $med-gray;
+	border-radius: 0.5rem;
+	background: #fff;
+	box-shadow: $box-shadow;
+	h2 {
+		font-family: "Quicksand", sans-serif;
+		font-weight: 400;
+		margin-bottom: 10px;
+		border-bottom: 1px solid $light-gray;
+	}
+	p {
+		line-height: 1.2rem;
+	}
 }
 
 // @media query //////////////////////////////

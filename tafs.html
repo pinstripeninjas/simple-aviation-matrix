@@ -3,20 +3,16 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<!-- Local Stylesheet -->
+		<!-- Local stylesheet -->
 		<link rel="stylesheet" href="./static/css/aviation-web.css" />
 		<!-- Google Font -->
 		<link
-			href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Quicksand:wght@300;400;700&display=swap"
 			rel="stylesheet"
 		/>
 		<!-- Font Awesome CDN -->
 		<script src="https://kit.fontawesome.com/3fb8c73f01.js" crossorigin="anonymous"></script>
-		<!-- Axios CDN -->
-		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-		<!-- Chart JS -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-		<title>Density Altitude Climatology</title>
+		<title>Aviation Matrix</title>
 	</head>
 	<body>
 		<!-- Navbar -->
@@ -32,8 +28,8 @@
 			<div id="nav-links">
 				<ul>
 					<!-- ...may need href to be updated -->
-					<a href="/matrix/?aviation"><li>Forecast Matrix</li></a>
 					<a href="/matrix/?mobile"><li>Mobile Matrix</li></a>
+					<a href="/matrix/?climo"><li>Climatology</li></a>
 					<a href="/matrix/?radar"><li>Radar/Obs</li></a>
 					<a href="/accounts/logout"><li>Logout</li></a>
 				</ul>
@@ -41,11 +37,9 @@
 		</nav>
 		<section>
 			<div class="loader center"><i class="fas fa-sun rotate"></i>Loading...</div>
-			<div class="chart display-none">
-				<canvas id="climatologyChart" width="100%"></canvas>
-			</div>
+			<!-- Matrix -->
+			<div id="TAFs"></div>
 		</section>
-
-		<script src="./static/js/climatologyWeb.js"></script>
+		<script src="./static/js/TAFs.js"></script>
 	</body>
 </html>
