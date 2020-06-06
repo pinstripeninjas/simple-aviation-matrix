@@ -307,6 +307,12 @@ iframe {
   margin-left: 25px;
 }
 
+#mainFlex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 #TAFs {
   display: -webkit-box;
   display: -ms-flexbox;
