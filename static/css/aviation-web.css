@@ -316,7 +316,7 @@ section {
   outline: none;
 }
 
-#btns button .active {
+#btns .active {
   background-color: #0099d8;
   border: 2px solid #0099d8;
   color: #fff;

@@ -239,11 +239,11 @@ section {
 		&:focus {
 			outline: none;
 		}
-		.active {
-			background-color: $secondary-blue;
-			border: 2px solid $secondary-blue;
-			color: #fff;
-		}
+	}
+	.active {
+		background-color: $secondary-blue;
+		border: 2px solid $secondary-blue;
+		color: #fff;
 	}
 }
 

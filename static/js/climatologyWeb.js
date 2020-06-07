@@ -22,17 +22,22 @@ let labels = [];
 let datasetLabels = [];
 let datasetByLabel = {};
 
-function getData() {
+getData(btnList[0]);
+makeBtns();
+
+function getData(siteInfo) {
+	loader.classList.remove("display-none");
+	chartDiv.classList.add("display-none");
 	axios
-		.get(urlKFHU)
+		.get(siteInfo.url)
 		.then(({ data: climatology }) => {
 			labels = climatology.labels;
 			datasetLabels = climatology.datasetLabels;
 			datasetByLabel = climatology.datasetByLabel;
 		})
 		.then(() => {
-			loader.classList.toggle("display-none");
-			chartDiv.classList.toggle("display-none");
+			loader.classList.add("display-none");
+			chartDiv.classList.remove("display-none");
 			let myLineChart = new Chart(climatologyChart, {
 				type: "line",
 				data: {
@@ -44,7 +49,7 @@ function getData() {
 					maintainAspectRatio: false,
 					title: {
 						display: true,
-						text: "Density Altitude By Month - KTUS",
+						text: `Density Altitude By Month - ${siteInfo.site}`,
 						fontSize: 20,
 					},
 				},
@@ -71,13 +76,13 @@ function makeBtns() {
 		const newBtn = document.createElement("button");
 		newBtn.addEventListener("click", () => selectClimoSite(btn));
 		newBtn.innerText = btn.site;
+		if (btn.site === "KTUS") {
+			newBtn.classList.add("active");
+		}
 		btns.append(newBtn);
 	}
 }
 
 function selectClimoSite(siteInfo) {
-	console.log(`You clicked ${siteInfo.site}`);
+	getData(siteInfo);
 }
-
-getData();
-makeBtns();
