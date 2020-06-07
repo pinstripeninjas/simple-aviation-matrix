@@ -5,6 +5,7 @@ const urlKFHU = "https://extendsclass.com/api/json-storage/bin/cedffee";
 const climatologyChart = document.getElementById("climatologyChart");
 const chartDiv = document.querySelector(".chart");
 const loader = document.querySelector(".loader");
+const btns = document.querySelector("#btns");
 const btnList = [
 	{
 		site: "KTUS",
@@ -65,4 +66,18 @@ function buildDataset() {
 	return datasets;
 }
 
+function makeBtns() {
+	for (let btn of btnList) {
+		const newBtn = document.createElement("button");
+		newBtn.addEventListener("click", () => selectClimoSite(btn));
+		newBtn.innerText = btn.site;
+		btns.append(newBtn);
+	}
+}
+
+function selectClimoSite(siteInfo) {
+	console.log(`You clicked ${siteInfo.site}`);
+}
+
 getData();
+makeBtns();

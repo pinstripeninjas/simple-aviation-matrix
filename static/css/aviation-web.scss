@@ -217,17 +217,46 @@ section {
 	color: #fff;
 }
 
-// Chart JS //////////////////////////////
+// Chart JS and Climo Page //////////////////////////////
+#btns {
+	margin-top: 20px;
+	display: flex;
+	justify-content: center;
+	button {
+		color: $secondary-blue;
+		font-size: 1.2rem;
+		padding: 10px 15px;
+		margin: 0 20px;
+		border: 2px solid $secondary-blue;
+		background-color: #fff;
+		border-radius: 0.5rem;
+		transition: all 0.5s;
+		&:hover {
+			cursor: pointer;
+			background-color: $secondary-blue;
+			color: #fff;
+		}
+		&:focus {
+			outline: none;
+		}
+		.active {
+			background-color: $secondary-blue;
+			border: 2px solid $secondary-blue;
+			color: #fff;
+		}
+	}
+}
+
 .chart {
 	height: 85%;
 	width: 85%;
 	padding: 20px;
-	margin: 40px auto;
+	margin: 20px auto;
 	background-color: #fff;
 	box-shadow: $box-shadow;
 }
 
-// Radar and Obs Page ////////////////////
+// Radar and Obs Page ///////////////////////////////
 iframe {
 	position: absolute;
 	top: 0%;
@@ -253,8 +282,6 @@ iframe {
 	font-family: "Cutive Mono", monospace;
 	margin: 20px;
 	padding: 20px;
-	border: 1px solid $med-gray;
-	border-radius: 0.5rem;
 	background: #fff;
 	box-shadow: $box-shadow;
 	h2 {
