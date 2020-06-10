@@ -17,46 +17,47 @@ const btnList = [
 	},
 ];
 
+// chart specific variables
 const colors = ["#E81D11", "#FF931F", "#333", "#6EAF3D"];
 let labels = [];
 let datasetLabels = [];
 let datasetByLabel = {};
 
+// get starting data for KTUS and make buttons from object
 getData(btnList[0]);
 makeBtns();
 
+// get requested chart data
 function getData(siteInfo) {
 	loader.classList.remove("display-none");
 	chartDiv.classList.add("display-none");
-	axios
-		.get(siteInfo.url)
-		.then(({ data: climatology }) => {
-			labels = climatology.labels;
-			datasetLabels = climatology.datasetLabels;
-			datasetByLabel = climatology.datasetByLabel;
-		})
-		.then(() => {
-			loader.classList.add("display-none");
-			chartDiv.classList.remove("display-none");
-			let myLineChart = new Chart(climatologyChart, {
-				type: "line",
-				data: {
-					labels: labels,
-					datasets: buildDataset(),
+	axios.get(siteInfo.url).then(({ data: climatology }) => {
+		labels = climatology.labels;
+		datasetLabels = climatology.datasetLabels;
+		datasetByLabel = climatology.datasetByLabel;
+		// Make climo chart
+		const myLineChart = new Chart(climatologyChart, {
+			type: "line",
+			data: {
+				labels: labels,
+				datasets: buildDataset(),
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+				title: {
+					display: true,
+					text: `Density Altitude By Month - ${siteInfo.site}`,
+					fontSize: 20,
 				},
-				options: {
-					responsive: true,
-					maintainAspectRatio: false,
-					title: {
-						display: true,
-						text: `Density Altitude By Month - ${siteInfo.site}`,
-						fontSize: 20,
-					},
-				},
-			});
+			},
 		});
+		loader.classList.add("display-none");
+		chartDiv.classList.remove("display-none");
+	});
 }
 
+// creates object required for chart data
 function buildDataset() {
 	const datasets = [];
 	for (let i = 0; i < datasetLabels.length; i++) {
@@ -71,6 +72,7 @@ function buildDataset() {
 	return datasets;
 }
 
+// creates buttons at top of screen to select climo site
 function makeBtns() {
 	for (let btn of btnList) {
 		const newBtn = document.createElement("button");
@@ -83,6 +85,14 @@ function makeBtns() {
 	}
 }
 
+// from click listener on buttons which gets climo site data
 function selectClimoSite(siteInfo) {
 	getData(siteInfo);
+	climatologyChart.innerHTML = "";
+	for (let i = 0; i < btns.childNodes.length; i++) {
+		btns.childNodes[i].classList.remove("active");
+		if (btnList[i].site === siteInfo.site) {
+			btns.childNodes[i].classList.add("active");
+		}
+	}
 }
