@@ -77,6 +77,10 @@ nav #nav-links ul {
   padding: 0;
 }
 
+nav #nav-links ul i {
+  margin-left: 5px;
+}
+
 nav #nav-links ul li {
   list-style-type: none;
   padding: 0 15px;
@@ -87,6 +91,28 @@ nav #nav-links ul li {
 nav #nav-links ul li:hover {
   background-color: #072f65;
   cursor: pointer;
+}
+
+nav #nav-links ul #links:hover .dropdown {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav #nav-links ul .dropdown {
+  display: none;
+  position: absolute;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.25);
+          box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.25);
+  background-color: #0a4595;
+  color: #fff;
+  -webkit-transform: translateX(-15px);
+          transform: translateX(-15px);
+  z-index: 100;
 }
 
 section {
@@ -284,11 +310,49 @@ section {
   color: #fff;
 }
 
+#btns {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#btns button {
+  color: #0099d8;
+  font-size: 1.2rem;
+  padding: 10px 15px;
+  margin: 0 20px;
+  border: 2px solid #0099d8;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+#btns button:hover {
+  cursor: pointer;
+  background-color: #0099d8;
+  color: #fff;
+}
+
+#btns button:focus {
+  outline: none;
+}
+
+#btns .active {
+  background-color: #0099d8;
+  border: 2px solid #0099d8;
+  color: #fff;
+}
+
 .chart {
   height: 85%;
   width: 85%;
   padding: 20px;
-  margin: 40px auto;
+  margin: 20px auto;
   background-color: #fff;
   -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.25);
           box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.25);

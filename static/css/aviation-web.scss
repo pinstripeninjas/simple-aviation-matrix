@@ -75,6 +75,9 @@ nav {
 		ul {
 			display: flex;
 			padding: 0;
+			i {
+				margin-left: 5px;
+			}
 			li {
 				list-style-type: none;
 				padding: 0 15px;
@@ -83,6 +86,22 @@ nav {
 					background-color: darken($primary-blue, 10%);
 					cursor: pointer;
 				}
+			}
+			#links:hover {
+				.dropdown {
+					display: flex;
+				}
+			}
+			.dropdown {
+				display: none;
+				position: absolute;
+				flex-direction: column;
+				box-shadow: $box-shadow;
+				// max-width: 205px;
+				background-color: $primary-blue;
+				color: #fff;
+				transform: translateX(-15px);
+				z-index: 100;
 			}
 		}
 	}
@@ -217,17 +236,46 @@ section {
 	color: #fff;
 }
 
-// Chart JS //////////////////////////////
+// Chart JS and Climo Page //////////////////////////////
+#btns {
+	margin-top: 20px;
+	display: flex;
+	justify-content: center;
+	button {
+		color: $secondary-blue;
+		font-size: 1.2rem;
+		padding: 10px 15px;
+		margin: 0 20px;
+		border: 2px solid $secondary-blue;
+		background-color: #fff;
+		border-radius: 0.5rem;
+		transition: all 0.5s;
+		&:hover {
+			cursor: pointer;
+			background-color: $secondary-blue;
+			color: #fff;
+		}
+		&:focus {
+			outline: none;
+		}
+	}
+	.active {
+		background-color: $secondary-blue;
+		border: 2px solid $secondary-blue;
+		color: #fff;
+	}
+}
+
 .chart {
 	height: 85%;
 	width: 85%;
 	padding: 20px;
-	margin: 40px auto;
+	margin: 20px auto;
 	background-color: #fff;
 	box-shadow: $box-shadow;
 }
 
-// Radar and Obs Page ////////////////////
+// Radar and Obs Page ///////////////////////////////
 iframe {
 	position: absolute;
 	top: 0%;
