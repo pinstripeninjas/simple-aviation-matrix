@@ -1,12 +1,19 @@
 // URL locations
 const proxyUrl = "https://cors-anywhere.herokuapp.com/";
 const targetUrl = "https://www.aviationweather.gov/cgi-bin/json/TafJSON.php?bbox=-112,31,-109,33";
+const discussionUrl = "https://api.weather.gov/products/types/AFD/locations/TWC";
 
 const allTAFs = document.querySelector("#TAFs");
+const discussion = document.querySelector("#discussion");
 const loader = document.querySelector(".loader");
 const changeGroup = ["BECMG", "TEMPO", "FM", "PROB"];
 
 getTAFs();
+getDiscussion();
+
+function hideLoader() {
+	loader.classList.add("display-none");
+}
 
 function getTAFs() {
 	fetch(proxyUrl + targetUrl)
@@ -63,6 +70,16 @@ function adjustAlignment(rawTAF) {
 	return finalArray;
 }
 
-function hideLoader() {
-	loader.classList.add("display-none");
+async function getDiscussion() {
+	const res = await fetch(discussionUrl);
+	const data = await res.json();
+	const res2 = await fetch(data["@graph"][0]["@id"]);
+	const data2 = await res2.json();
+	const discArray = data2.productText.split("&&");
+	const discStr = discArray[2].toString().replace(/\n/g, "");
+	const header = document.createElement("h2");
+	const body = document.createElement("p");
+	header.innerText = "Aviation Discussion";
+	body.innerHTML = discStr.substring(0, 33) + "<br>" + discStr.substring(33);
+	discussion.append(header, body);
 }
